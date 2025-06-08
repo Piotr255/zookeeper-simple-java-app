@@ -18,7 +18,8 @@ public class ZKManagerImpl implements ZKManager {
 
     private void initialize() throws IOException, InterruptedException {
         ZKConnection zkConnection = new ZKConnection();
-        zkeeper = zkConnection.connect("localhost");
+        String connectString = "localhost:2181,localhost:2182,localhost:2183";
+        zkeeper = zkConnection.connect(connectString);
     }
 
 //    public void closeConnection() throws InterruptedException {
